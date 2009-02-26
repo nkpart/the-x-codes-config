@@ -7,13 +7,12 @@ task :install do
   destination_dir = File.expand_path("~/Library/Application Support/Developer/Shared/Xcode")
   
   Dir['**/*'].each do |source|
-    puts source
     next if %w[Rakefile README].include? source
     next if File.directory?(source)
-    puts file
 
     dest_path = File.join(destination_dir, source)
-
+    FileUtils::mkdir_p File.dirname(dest_path)
+    
     if File.exist?(dest_path) || File.symlink?(dest_path)
       if replace_all
         replace_file(source, dest_path)

@@ -1,2 +1,7 @@
+h1. The X Codes Xcode Config
 
-Run 'rake install'. Done!
+h2. Install
+
+* Clone the repo, stick it anywhere you like. It doesn't matter
+* Run 'rake install'. This will install symlinks from the repository versions of files into the places that Xcode looks for things.
+
