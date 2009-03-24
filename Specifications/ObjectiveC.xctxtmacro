@@ -105,5 +105,14 @@
             IsMenuItem = YES;
             Name = "Bracket Expression";
             TextString = "[<#!expression!#> <#selector#>]";
-        }
+        },
+
+		{
+			Identifier = objc.fkfunctionf;
+			BasedOn = objc;
+			Name = "-(id):(id)arg";
+			IsMenuItem = YES;
+			CompletionPrefix = f;
+			TextString = "-$(PreMethodTypeSpacing)(id):(id)arg$(FunctionBlockSeparator){\n\t<#!statements!#>\n}\n";
+		}
 )
