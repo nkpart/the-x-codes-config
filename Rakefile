@@ -4,8 +4,8 @@ desc "install symlinks to these files into the xcode extension folder"
 task :install do
   replace_all = false
   
-  destination_dir = File.expand_path("~/Library/Application Support/Developer/Shared/Xcode")
-  
+  destination_dir = File.expand_path("~/Library/Application Support/")
+  Dir.chdir 'AppSupport'
   Dir['**/*'].each do |source|
     next if %w[Rakefile README].include? source
     next if File.directory?(source)
