@@ -21,6 +21,7 @@
 		BasedOn = xcodes.objc;
 		IsMenuItem = YES;
 		Name = "Hello";
+		OnlyAtBOL = YES;
 		TextString = "Hello, Xcode!";
 		CompletionPrefix = "hello";
 	},
@@ -34,6 +35,7 @@
             TextString = "-$(PreMethodTypeSpacing)(id)$(PreMethodDeclSpacing)init$(FunctionBlockSeparator){\n\tif$(PreExpressionsSpacing)(($(InExpressionsSpacing)self = [super init]$(InExpressionsSpacing)))$(BlockSeparator){\n\t\t<#!initializations!#>\n\t}\n\treturn self;\n}\n";
             CompletionPrefix = init;
             IncludeContexts = ( "xcode.lang.objc.implementation" );
+            OnlyAtBOL = YES;
         },
 
         {
@@ -44,6 +46,7 @@
             TextString = "if$(PreExpressionsSpacing)(($(InExpressionsSpacing)self = [super init]$(InExpressionsSpacing)))$(BlockSeparator){\n\t<#!initializations!#>\n}\nreturn self;";
             CompletionPrefix = ini;
             IncludeContexts = ( "xcode.lang.objc.block" );
+        		OnlyAtBOL = YES;
         },
 
         {
@@ -55,6 +58,7 @@
             CompletionPrefix = ext;
             IncludeContexts = ( "xcode.lang.objc" );
             ExcludeContexts = ( "xcode.lang.objc.block", "xcode.lang.objc.implementation" );
+        		OnlyAtBOL = YES;
         },
         
         {
@@ -66,6 +70,7 @@
             CompletionPrefix = vdl;
             IncludeContexts = ( "xcode.lang.objc.implementation" );
             ExcludeContexts = ( "xcode.lang.objc.block" );
+        		OnlyAtBOL = YES;
         },
         
         {
@@ -77,6 +82,7 @@
             CompletionPrefix = vwa;
             IncludeContexts = ( "xcode.lang.objc.implementation" );
             ExcludeContexts = ( "xcode.lang.objc.block" );
+        		OnlyAtBOL = YES;
         },
 
         {
@@ -88,6 +94,7 @@
             CompletionPrefix = vda;
             IncludeContexts = ( "xcode.lang.objc.implementation" );
             ExcludeContexts = ( "xcode.lang.objc.block" );
+        		OnlyAtBOL = YES;
         },
 
         {
@@ -99,6 +106,7 @@
             CompletionPrefix = vwd;
             IncludeContexts = ( "xcode.lang.objc.implementation" );
             ExcludeContexts = ( "xcode.lang.objc.block" );
+        		OnlyAtBOL = YES;
         },
 
         {
@@ -110,6 +118,7 @@
             CompletionPrefix = vdd;
             IncludeContexts = ( "xcode.lang.objc.implementation" );
             ExcludeContexts = ( "xcode.lang.objc.block" );
+        		OnlyAtBOL = YES;
         },
 
         {
@@ -133,5 +142,6 @@
 			IsMenuItem = YES;
 			CompletionPrefix = f;
 			TextString = "-$(PreMethodTypeSpacing)(id):(id)arg$(FunctionBlockSeparator){\n\t<#!statements!#>\n}\n";
+			OnlyAtBOL = YES;
 		}
 )
