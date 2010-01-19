@@ -106,7 +106,13 @@
             Name = "Bracket Expression";
             TextString = "[<#!expression!#> <#selector#>]";
         },
-
+        {
+            Identifier = objc.bracket.first;
+            BasedOn = objc;
+            IsMenuItem = YES;
+            Name = "Bracket Expression, selection second";
+            TextString = "[<#selector#> <#!expression!#>]";
+        },
 		{
 			Identifier = objc.fkfunctionf;
 			BasedOn = objc;
