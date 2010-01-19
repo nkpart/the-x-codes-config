@@ -1,31 +1,44 @@
 // $ defaults write com.apple.Xcode XCCodeSenseFormattingOptions -dict FunctionBlockSeparator " " PreMethodDeclSpacing "" PreMethodTypeSpacing " "
 
 (
+    {
+        Identifier = xcodes.objc;
+        Name = "The X Codes Objective-C";
+        IsMenu = YES;
+// Can be set (for all languages) with the XCCodeSenseFormattingOptions user default
+//        DefaultSettings = {
+//            PreExpressionsSpacing = " ";
+//            InExpressionsSpacing = "";
+//            BlockSeparator = " ";
+//            PostBlockSeparator = "\n";
+//        };
+        IncludeContexts = ( "xcode.lang.objc" );
+        ExcludeContexts = ( "xcode.lang.string", "xcode.lang.character", "xcode.lang.comment", "xcode.lang.c.preprocessor" );
+    },
+
 	{
 		Identifier = objc.hello;
-		BasedOn = objc;
+		BasedOn = xcodes.objc;
 		IsMenuItem = YES;
 		Name = "Hello";
 		TextString = "Hello, Xcode!";
 		CompletionPrefix = "hello";
-		IncludeContexts = ("xcode.lang.objc");
 	},
 
 // MARK: methods templates
         {
             Identifier = objc.init;
-            BasedOn = objc;
+            BasedOn = xcodes.objc;
             IsMenuItem = YES;
             Name = "init Definition";
             TextString = "-$(PreMethodTypeSpacing)(id)$(PreMethodDeclSpacing)init$(FunctionBlockSeparator){\n\tif$(PreExpressionsSpacing)(($(InExpressionsSpacing)self = [super init]$(InExpressionsSpacing)))$(BlockSeparator){\n\t\t<#!initializations!#>\n\t}\n\treturn self;\n}\n";
             CompletionPrefix = init;
             IncludeContexts = ( "xcode.lang.objc.implementation" );
-            ExcludeContexts = ( "xcode.lang.objc.block" );
         },
 
         {
             Identifier = objc.ini;
-            BasedOn = objc;
+            BasedOn = xcodes.objc;
             IsMenuItem = YES;
             Name = "init method insides";
             TextString = "if$(PreExpressionsSpacing)(($(InExpressionsSpacing)self = [super init]$(InExpressionsSpacing)))$(BlockSeparator){\n\t<#!initializations!#>\n}\nreturn self;";
@@ -35,7 +48,7 @@
 
         {
             Identifier = objc.category;
-            BasedOn = objc;
+            BasedOn = xcodes.objc;
             IsMenuItem = YES;
             Name = "categories";
             TextString = "@interface <#!what!#> (<#ext#>)\n<#statements#>\n@end\n";
@@ -46,7 +59,7 @@
         
         {
             Identifier = objc.viewDidLoad;
-            BasedOn = objc;
+            BasedOn = xcodes.objc;
             IsMenuItem = YES;
             Name = "viewDidLoad Definition";
             TextString = "-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)viewDidLoad$(FunctionBlockSeparator){\n\t[super viewDidLoad];\n\t<#!statements!#>\n}\n";
@@ -57,7 +70,7 @@
         
         {
             Identifier = objc.viewWillAppear;
-            BasedOn = objc;
+            BasedOn = xcodes.objc;
             IsMenuItem = YES;
             Name = "viewWillAppear Definition";
             TextString = "-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)viewWillAppear:(BOOL)animated$(FunctionBlockSeparator){\n\t[super viewWillAppear:animated];\n\t<#!statements!#>\n}\n";
@@ -68,7 +81,7 @@
 
         {
             Identifier = objc.viewDidAppear;
-            BasedOn = objc;
+            BasedOn = xcodes.objc;
             IsMenuItem = YES;
             Name = "viewDidAppear Definition";
             TextString = "-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)viewDidAppear:(BOOL)animated$(FunctionBlockSeparator){\n\t[super viewDidAppear:animated];\n\t<#!statements!#>\n}\n";
@@ -79,7 +92,7 @@
 
         {
             Identifier = objc.viewWillDisappear;
-            BasedOn = objc;
+            BasedOn = xcodes.objc;
             IsMenuItem = YES;
             Name = "viewWillDisappear Definition";
             TextString = "-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)viewWillDisappear:(BOOL)animated$(FunctionBlockSeparator){\n\t[super viewWillDisappear:animated];\n\t<#!statements!#>\n}\n";
@@ -90,7 +103,7 @@
 
         {
             Identifier = objc.viewDidDisappear;
-            BasedOn = objc;
+            BasedOn = xcodes.objc;
             IsMenuItem = YES;
             Name = "viewDidDisappear Definition";
             TextString = "-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)viewDidDisappear:(BOOL)animated$(FunctionBlockSeparator){\n\t[super viewDidDisappear:animated];\n\t<#!statements!#>\n}\n";
@@ -101,21 +114,21 @@
 
         {
             Identifier = objc.bracket;
-            BasedOn = objc;
+            BasedOn = xcodes.objc;
             IsMenuItem = YES;
             Name = "Bracket Expression";
             TextString = "[<#!expression!#> <#selector#>]";
         },
         {
             Identifier = objc.bracket.first;
-            BasedOn = objc;
+            BasedOn = xcodes.objc;
             IsMenuItem = YES;
             Name = "Bracket Expression, selection second";
             TextString = "[<#selector#> <#!expression!#>]";
         },
 		{
 			Identifier = objc.fkfunctionf;
-			BasedOn = objc;
+			BasedOn = xcodes.objc;
 			Name = "-(id):(id)arg";
 			IsMenuItem = YES;
 			CompletionPrefix = f;
